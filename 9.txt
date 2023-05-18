@@ -1,0 +1,15 @@
+1)SELECT COUNT(DISTINCT city) AS 'Количество городов' FROM customers WHERE city IS NOT NULL;
+2)SELECT cnum, MIN(amt) AS 'Минимальная стоимость' FROM orders GROUP BY cnum;
+3)SELECT snum, odate, MIN(amt) AS 'Минимальная стоимость' FROM orders GROUP BY snum, odate;
+4)SELECT cnum , MIN(amt) AS 'Минимальная стоимость' FROM orders WHERE cnum IN (SELECT cnum FROM customers WHERE cname IN ('Cisneros', 'Grass', 'Clemens')) GROUP BY cnum;
+5)SELECT cname FROM customers WHERE cname LIKE 'G%' ORDER BY cname;
+6)SELECT city, MAX(rating) AS 'Максимальный рейтинг' FROM customers GROUP BY city;
+7)SELECT odate, COUNT(DISTINCT snum) AS 'Количество продавцов' FROM orders GROUP BY odate;
+8)SELECT snum, odate, COUNT(*) AS 'Количество заказов' FROM orders GROUP BY snum, odate;
+9)SELECT rating, cname from customers GROUP by rating, cname order BY 1
+10)SELECT snum, cnum from orders GROUP by snum, cnum order BY 1
+11)SELECT snum, sname, city FROM salespeople ORDER BY sname;
+12)SELECT cnum, cname, city, rating FROM customers ORDER BY rating, cname;
+13)SELECT sname, city FROM salespeople GROUP BY city, snum ORDER BY sname
+14)SELECT cname, city, rating FROM customers ORDER BY 2;
+15)SELECT city, COUNT(rating) AS 'Количество рейтингов' FROM customers GROUP BY city ORDER BY 2;
